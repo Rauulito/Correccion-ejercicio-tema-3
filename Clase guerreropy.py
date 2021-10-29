@@ -3,33 +3,33 @@ from Utilidades import *
 
 
 class Guerrero(SerVivo):
- __max_target = 10
- def __init__(self, name):
- SerVivo.__init__(self)
- self._target = self.__generateTargetToDie()
- self._name = name
- def get_name(self):
- return self._name
- # No se crea un set porque los guerreros no pueden cambiar de nombre
- '''
- def set_name(self, name):
+    __max_target = 10
+    def __init__(self, name):
+        SerVivo.__init__(self)
+        self._target = self.__generateTargetToDie()
+        self._name = name
+    def get_name(self):
+        return self._name
+# No se crea un set porque los guerreros no pueden cambiar de nombre
+'''
+def set_name(self, name):
  return self._name = name
- '''
- def get_target(self):
- return self._target
- def shoot(self):
- '''
- Shoot if the warrior is alive generating a randome number between 0
+'''
+    def get_target(self):
+        return self._target
+    def shoot(self):
+        '''
+        Shoot if the warrior is alive generating a randome number between 0
 and the ____max_target
- :returns the number to shoot if the warrior is alive, -1 otherwise
- '''
- if(self._vivo):
- shot = generaIntAleatorio(0,Guerrero.__max_target)
- print(self._name + " dispara " + str(shot))
- return shot
- else:
- return -1
- def get_shot(self, shot):
+        :returns the number to shoot if the warrior is alive, -1 otherwise
+        '''
+        if(self._vivo):
+            shot = generaIntAleatorio(0,Guerrero.__max_target)
+            print(self._name + " dispara " + str(shot))
+            return shot
+        else:
+            return -1
+    def get_shot(self, shot):
  '''
  If the target is guessed by the shoot, then the warrior dies.
  :param shoot: int with the shoot against the soldier
